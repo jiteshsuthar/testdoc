@@ -16,7 +16,8 @@ jobs:
       - name: Generate file list
         run: |
           echo "## File List" > README.md
-          find . -type f | sed 's/^.\{2\}//' | awk '{print "* [" $0 "](./" $0 ")"}' >> README.md
+          # find . -type f | sed 's/^.\{2\}//' | awk '{print "* [" $0 "](./" $0 ")"}' >> README.md
+          find docs -type f | sed 's/^docs\///' | awk '{print "* [" $0 "](./" $0 ")"}' >> README.md
 
       - name: Commit and push changes
         run: |
