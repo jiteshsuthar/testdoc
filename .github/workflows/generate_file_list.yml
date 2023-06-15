@@ -18,9 +18,7 @@ jobs:
           echo "## File List" > README.md
           # find . -type f | sed 's/^.\{2\}//' | awk '{print "* [" $0 "](./" $0 ")"}' >> README.md
           find docs -type f | sed 's/^docs\///' | awk '{print "* [/" "docs/" $0 "](./" "docs/" $0 ")"}' >> README.md
-          echo ""
-          echo ""
-          echo "Last Update: $(TZ='Asia/Kolkata' date)" >> README.md
+          echo "#### Last Update: $(TZ='Asia/Kolkata' date)" >> README.md
 
       - name: Commit and push changes
         run: |
