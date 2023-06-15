@@ -19,6 +19,7 @@ jobs:
           # find . -type f | sed 's/^.\{2\}//' | awk '{print "* [" $0 "](./" $0 ")"}' >> README.md
           # find docs -type f | sed 's/^docs\///' | awk '{print "* [" $0 "](./" $0 ")"}' >> README.md
           find docs -type f | sed 's/^docs\///' | awk '{print "* [/" "docs/" $0 "](./" "docs/" $0 ")"}' >> README.md
+          echo "\nLast Update: $(date)" >> README.md
 
       - name: Commit and push changes
         run: |
